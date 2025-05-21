@@ -8,7 +8,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Shoes - Tempat Cuci Sepatu Termurah di Karawang</title>
+    <title>Tambah Order Baru - Our Shoes</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome for icons -->
@@ -91,71 +91,6 @@ session_start();
             display: block;
         }
         
-        /* Hero section */
-        .hero {
-            background-color: #fff;
-            padding: 60px 20px;
-            text-align: center;
-        }
-        
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 15px;
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            color: #666;
-        }
-        
-        /* Menu cards */
-        .menu-section {
-            padding: 30px 20px;
-        }
-        
-        .menu-section h2 {
-            margin-bottom: 20px;
-        }
-        
-        .menu-cards {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: flex-start;
-        }
-        
-        .menu-card {
-            background-color: #03a9f4;
-            color: white;
-            border-radius: 8px;
-            padding: 20px;
-            width: calc(33.33% - 14px);
-            min-width: 250px;
-            display: flex;
-            align-items: flex-start;
-            text-decoration: none;
-            cursor: pointer;
-            transition: transform 0.3s ease, background-color 0.3s ease;
-        }
-        
-        .menu-card:hover {
-            transform: translateY(-5px);
-            background-color: #0288d1;
-        }
-        
-        .menu-card .icon {
-            font-size: 24px;
-            margin-right: 15px;
-        }
-        
-        .menu-card-content h3 {
-            margin-bottom: 8px;
-        }
-        
-        .menu-card-content p {
-            font-size: 0.9rem;
-        }
-        
         /* Container with blue border */
         .container-custom {
             max-width: 1200px;
@@ -173,14 +108,150 @@ session_start();
             padding: 8px 16px;
         }
         
+        /* Page header */
+        .page-header {
+            background-color: #fff;
+            padding: 30px 20px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .page-header p {
+            font-size: 1.1rem;
+            color: #666;
+        }
+        
+        /* Form section */
+        .form-section {
+            padding: 30px 20px;
+        }
+        
+        .order-form {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-label {
+            font-weight: 500;
+            margin-bottom: 8px;
+            display: block;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        .form-select {
+            width: 100%;
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            background-color: #fff;
+        }
+        
+        .form-check-input {
+            margin-right: 10px;
+        }
+        
+        .btn-submit {
+            background-color: #28a745;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .btn-submit:hover {
+            background-color: #218838;
+        }
+        
+        .btn-cancel {
+            background-color: #dc3545;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-right: 10px;
+        }
+        
+        .btn-cancel:hover {
+            background-color: #c82333;
+        }
+        
+        /* Form sections */
+        .form-section-title {
+            border-bottom: 2px solid #03a9f4;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            color: #03a9f4;
+        }
+        
+        .form-section-content {
+            margin-bottom: 30px;
+        }
+        
+        /* Price calculation card */
+        .price-card {
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 20px;
+        }
+        
+        .price-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .price-total {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 0 8px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
         /* Responsive adjustments */
         @media (max-width: 768px) {
-            .menu-card {
-                width: 100%;
-            }
-            
             .navbar-nav .nav-item .nav-link.active {
                 margin-left: 0;
+            }
+            
+            .btn-actions {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .btn-cancel, .btn-submit {
+                width: 100%;
+                margin-right: 0;
             }
         }
     </style>
@@ -220,72 +291,19 @@ session_start();
             </div>
         </nav>
 
-        
-        <div class="hero">
-            <h1>Our Shoes.</h1>
-            <p>Tempat cuci sepatu termurah di Karawang</p>
+        <div class="page-header">
+            <h1>Tambah Order Baru</h1>
+            <p>Isi form berikut untuk membuat pesanan baru</p>
         </div>
         
-        <div class="menu-section">
-            <h2>Menu</h2>
-            
-            <div class="menu-cards">
-                <a href="riwayat.php" class="menu-card">
-                    <div class="icon">&#x23F0;</div>
-                    <div class="menu-card-content">
-                        <h3>Riwayat</h3>
-                        <p>Riwayat transaksi dan print invoice</p>
-                    </div>
-                </a>
+        <div class="form-section">
+            <form class="order-form" action="process_order.php" method="post">
                 
-                <a href="paket.php" class="menu-card">
-                    <div class="icon">&#x1F4E6;</div>
-                    <div class="menu-card-content">
-                        <h3>Paket</h3>
-                        <p>melihat detail dan menambah paket</p>
-                    </div>
-                </a>
-                
-                <a href="admin.php" class="menu-card">
-                    <div class="icon">&#x1F464;</div>
-                    <div class="menu-card-content">
-                        <h3>Admin</h3>
-                        <p>Mengelola Admin dan melihat list Admin</p>
-                    </div>
-                </a>
-                
-                <a href="order.php" class="menu-card">
-                    <div class="icon">&#x1F4C4;</div>
-                    <div class="menu-card-content">
-                        <h3>Kelola Order</h3>
-                        <p>Mengelola order yang masuk</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Bootstrap JS Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <script>
-        // Toggle dropdown menu for logout
-        function toggleDropdown() {
-            document.getElementById("logoutDropdown").classList.toggle("show");
-        }
-        
-        // Close the dropdown if the user clicks outside of it
-        window.onclick = function(event) {
-            if (!event.target.matches('.menu-icon')) {
-                var dropdowns = document.getElementsByClassName("menu-dropdown");
-                for (var i = 0; i < dropdowns.length; i++) {
-                    var openDropdown = dropdowns[i];
-                    if (openDropdown.classList.contains('show')) {
-                        openDropdown.classList.remove('show');
-                    }
-                }
-            }
-        }
-    </script>
-</body>
-</html>
+                <!-- Customer Information -->
+                <div class="form-section-content">
+                    <h3 class="form-section-title">Informasi Pelanggan</h3>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="customerName" class="
